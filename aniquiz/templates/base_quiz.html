@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+    <head> 
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style_base.css' %}"/>
+	<meta charset="UTF-8">
+	<meta name="author" content="Cotev">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+        <title>{% block title %}Quiz{% endblock %}</title>
+    </head>
+
+        <body>
+            <header><span id="header_title"><strong><a href="{% url "quiz" %}">Quiz</strong></a></span></header>
+            <div id="container_nav_contents">
+                {% comment %}
+                <nav>
+                    {% block nav %}
+                        <div id="nav_links">
+                            <a href="{% url "quiz" %}">Home</a>
+                        </div>
+                    {% endblock %}
+                </nav>
+                {% endcomment %}
+                <section id="content_quiz">
+                    {% block content %}
+                        contents from the base.html
+                    {% endblock %}
+                </section>
+            </div>
+            <footer><a href="{% url "contact_quiz" %}">Contact</a></footer>
+        </body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base_quiz.html" %}
+{% block content%}
+
+    {% comment %}
+<div class="justify_content_center">
+    {% endcomment %}
+<div>
+    {% if answer.truth %}
+        <div class="center">
+            <p id="right_answer">Bonne réponse !</p>
+        </div>
+    {% else %}
+        <div class="center">
+            <p id="wrong_answer">Mauvaise réponse...</p>
+        </div>
+        <div class=center>
+            <p id="test">La bonne réponse était : {{ true_answer.text }}</p>
+        </div>
+    {% endif %}
+
+    <div class=center>
+        <a href="{% url "quiz" %}" id="next_question" p>QUESTION SUIVANTE</a>
+    </div>
+
+    {% comment %}
+    <div id="explication">
+    <div class="container justify_content_center" id="explication">
+    {% endcomment %}
+    <div>
+
+        {% comment %}
+        <div class="container_title">
+        <p id="explication_title">Explication</p>
+        {% endcomment %}
+        <div class="container_title limited_width" id="explication_title">
+            <p>Explication</p>
+        </div>
+        {% if true_answer.explanation is None  %}
+            <div class="content">
+                <p>Explications à venir.</p>
+            </div>
+        {% else %}
+            <div class="content">
+                <p>{{ true_answer.explanation }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

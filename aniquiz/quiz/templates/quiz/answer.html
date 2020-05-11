@@ -1,0 +1,30 @@
+{% extends "base_quiz.html" %}
+{% block content%}
+<div>
+    {% if answer.truth %}
+        <p class="center" id="right_answer">Bonne réponse !</p>
+    {% else %}
+        <p class="center" id="wrong_answer">Mauvaise réponse...</p>
+        <p class="center">La bonne réponse était : {{ true_answer.text }}</p>
+    {% endif %}
+
+
+    <div>
+        <a href="{% url "quiz" %}" class="center" id="next_question">QUESTION SUIVANTE</a>
+    </div>
+
+
+    <div>
+        <div id="explication_title">
+            <p class="center">Explication</p>
+        </div>
+        {% if true_answer.explanation is None  %}
+            <div class="" id="explication">
+                <p class="center">Explications à venir.</p>
+            </div>
+        {% else %}
+            <p class="center">{{ true_answer.explanation }}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

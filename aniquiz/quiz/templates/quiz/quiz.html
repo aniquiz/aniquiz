@@ -1,0 +1,29 @@
+{% extends "base_quiz.html" %}
+{% block content%}
+
+    <div id="question">
+        <p>{{ question.text }}</p>
+        {% comment %}
+        {% endcomment %}
+    </div>
+    <form id="quiz" action="/quiz/" method="post">
+        {% csrf_token %}
+        <div id="answers_container">
+            {% for answer in answers %}
+                <div class="container" id="answer_{{ answer.number }}">
+                            <div class="container_title" id="answer_text_{{ answer.number }}">
+                                <p>{{ answer.text }}</p>
+                                <input type="radio" name="answer" value="{{ answer.number }}" required="" id="answer_{{ answer.number }}">
+                            </div>
+                            <div class="content">
+                                <img class="animation"src="{{ answer.image.url }}"/>
+                            </div>
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+        <div id="submit">
+            <input type="submit" value="Valider">
+        </div>
+    </form>
+{% endblock %}
