@@ -36,32 +36,12 @@ header
     align-items: center;
     height: 50px;
 }
-#header_title
-{
-}
 #container_nav_contents
 {
     display: flex;
     flex: 1; 
     flex-direction: column;
     justify-content: center;
-}
-nav
-{
-    display: flex;
-    flex-direction: column;
-    flex: 1; 
-    background-color: #66ccff;
-}
-#nav_links
-{
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    height: 50px;
 }
 #content
 {
@@ -74,48 +54,6 @@ footer
     display: flex;
     align-items: center;
     height: 5vh;
-}
-
-.items_centered
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    justify-content: space-around;
-}
-
-
-/*-----------------------*/
-/* css for show.html */
-.title
-{
-    display: flex;
-    justify-content: center;
-}
-.items_list
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    justify-content: space-around;
-}
-
-.centered
-{
-    align-items: center;
-}
-
-/*-----------------------*/
-/* css for show_items.html */
-.item
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px; 
 }
 
 /*-----------------------*/
@@ -131,25 +69,6 @@ footer
     width: 80%; 
     background-color: #ffffff;
 }
-.news_message
-{
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px; 
-}
-
-
-/*-----------------------*/
-/* css for stories.html */
-.item_link
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 
 /*-----------------------*/
 /* CSS for contact.html  */
@@ -161,44 +80,6 @@ footer
     justify-content: center;
 }
 
-
-/*-----------------------*/
-/* CSS for comment.html  */
-#message_sent
-{
-    display: flex;
-    justify-content: center;
-}
-.comment
-{
-    display: flex;
-    justify-content: center;
-}
-.comment_block
-{
-    display: flex;
-}
-
-.comment_message
-{
-    width: 100vh;
-    margin-left: 10px;
-}
-.form
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5vh;
-}
-
-/*
-img 
-{
-    width : 500;
-    height: auto;
-}
-*/
 img
 {
     max-width: 95%;

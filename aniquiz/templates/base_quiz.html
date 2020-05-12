@@ -11,17 +11,8 @@
     </head>
 
         <body>
-            <header><span id="header_title"><strong><a href="{% url "quiz" %}">Quiz</strong></a></span></header>
+            <header><span><strong><a href="{% url "quiz" %}">Quiz</strong></a></span></header>
             <div id="container_nav_contents">
-                {% comment %}
-                <nav>
-                    {% block nav %}
-                        <div id="nav_links">
-                            <a href="{% url "quiz" %}">Home</a>
-                        </div>
-                    {% endblock %}
-                </nav>
-                {% endcomment %}
                 <section id="content_quiz">
                     {% block content %}
                         contents from the base.html
