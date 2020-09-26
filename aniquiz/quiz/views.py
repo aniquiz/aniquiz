@@ -26,6 +26,7 @@ def quiz(request):
             return redirect('error')
     else:
         questions = Question.objects.all()
+        # Select a random question.
         question = questions[randrange(len(questions))]
         answers = question.answer_set.all()
     return render(request, 'quiz/quiz.html', locals())
