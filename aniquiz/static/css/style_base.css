@@ -169,7 +169,11 @@ img
 #answer_1
 {
     background-color: #ffffff;
+    /*
     border: 2px solid #ff99e6;
+    */
+    border: 2px solid;
+    border-color: #ff99e6;
 }
 #answer_2
 {
