@@ -24,7 +24,10 @@
                     <p class="center">Explications à venir.</p>
                 </div>
             {% else %}
+                {% comment %}
                 <p class="center">{{ true_answer.explanation }}</p>
+                {% endcomment %}
+                {{ true_answer.explanation|safe }}
             {% endif %}
         </div>
     </div>

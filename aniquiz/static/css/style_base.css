@@ -172,23 +172,23 @@ img
     /*
     border: 2px solid #ff99e6;
     */
-    border: 2px solid;
+    border: 5px solid;
     border-color: #ff99e6;
 }
 #answer_2
 {
     background-color: #ffffff;
-    border: 2px solid #80dfff;
+    border: 5px solid #80dfff;
 }
 #answer_3
 {
     background-color: #ffffff;
-    border: 2px solid #ffcc33;
+    border: 5px solid #ffcc33;
 }
 #answer_4
 {
     background-color: #ffffff;
-    border: 2px solid #ff8080;
+    border: 5px solid #ff8080;
 }
 #answer_text_1
 {
