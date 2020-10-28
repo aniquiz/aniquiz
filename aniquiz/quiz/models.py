@@ -13,7 +13,10 @@ class Answer(models.Model):
     date = models.DateTimeField(auto_now_add=True,
                                 auto_now=False,
                                 verbose_name="Date")
-    image = models.ImageField(upload_to="quiz/images/")
+    #image = models.ImageField(upload_to="quiz/images/")
+    animation = models.ForeignKey('Animation',
+                              null=True,
+                              on_delete=models.CASCADE,)
     question = models.ForeignKey('Question',
                                  null=True,
                                  on_delete=models.CASCADE,)
@@ -25,3 +28,6 @@ class Answer(models.Model):
         return self.text
     def __str__(self):
         return self.__def__()
+
+class Animation(models.Model):
+    image = models.ImageField(upload_to="quiz/images/")

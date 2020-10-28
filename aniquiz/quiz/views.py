@@ -21,12 +21,13 @@ def quiz(request, question_number):
             selected_answer = answers.get(number=request.POST['answer'])
             return redirect('answer', id_answer=selected_answer.id)
         except:
-            return redirect('error')
+            return redirect('first_question')
     else:
         questions = Question.objects.all()
         try:
             question = questions[question_number]
         except:
+            return redirect('first_question')
             question = questions[0]
 
         answers = question.answer_set.all()
