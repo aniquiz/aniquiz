@@ -6,7 +6,13 @@
     {% comment %}
     {% endcomment %}
     <div id="container_quiz">
-        <form id="quiz" action="/quiz/" method="post">
+        {% comment %}
+            Don't know why, but I have to add 
+            /%3F after {{ question_number }}
+            for that the server find the right
+            url.
+        {% endcomment %}
+        <form id="quiz" action="/quiz/question/{{ question_number }}/%3F" method="post">
             {% csrf_token %}
             <div id="answers_container">
                 {% for answer in answers %}

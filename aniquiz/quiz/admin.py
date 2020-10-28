@@ -4,8 +4,8 @@ from quiz.models import  Question
 from quiz.models import  Answer
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('text', 'date')
-    list_filter = ('text','date')
+    list_display = ('text', 'date', 'number')
+    list_filter = ('text','date', 'number')
 
 class AnswerAdmin(admin.ModelAdmin):
     list_display = ('text', 'date', 'image',

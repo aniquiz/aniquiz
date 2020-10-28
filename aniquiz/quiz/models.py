@@ -6,6 +6,7 @@ class Question(models.Model):
     date = models.DateTimeField(auto_now_add=True,
                                 auto_now=False,
                                 verbose_name="Date")
+    number = models.PositiveSmallIntegerField(blank=False)
 
 class Answer(models.Model):
     text = models.TextField(blank=False)

@@ -9,33 +9,40 @@ from quiz.forms import AnswersForm
 from django import forms
 
 
-def quiz(request):
+#def quiz(request):
+def quiz(request, question_number):
     """
-    For now, the question is selected randomly.
-    To do :
-        1) test the value sent by the client, just
-        to make sure at least it is a integer
-        2) coding a version where the questions are
-        displayed in a order.
     """
     if request.method == 'POST':
         try:
-            selected_answer = Answer.objects.get(id=request.POST['answer'])
+            questions = Question.objects.all()
+            question = questions[question_number]
+            answers = question.answer_set.all()
+            selected_answer = answers.get(number=request.POST['answer'])
             return redirect('answer', id_answer=selected_answer.id)
         except:
             return redirect('error')
     else:
         questions = Question.objects.all()
-        # Select a random question.
-        question = questions[randrange(len(questions))]
+        try:
+            question = questions[question_number]
+        except:
+            question = questions[0]
+
         answers = question.answer_set.all()
     return render(request, 'quiz/quiz.html', locals())
 
 
 def answer(request, id_answer):
     answer = Answer.objects.get(id=id_answer)
+    """
+    Pour une raison que j'ignore,
+    je n'arrive pas a avoir la question
+    lié à la réponse.
+    """
     question = answer.question
     true_answer = question.answer_set.filter(truth=True)[0]
+    next_question_number = question.number + 1
     return render(request, 'quiz/answer.html', locals())
 
 
@@ -45,3 +52,6 @@ def contact_quiz(request):
 
 def error(request):
     return render(request, 'quiz/error.html')
+
+def first_question(request):
+    return redirect('quiz', question_number=0)
