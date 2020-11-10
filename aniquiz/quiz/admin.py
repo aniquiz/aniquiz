@@ -12,7 +12,7 @@ class AnswerAdmin(admin.ModelAdmin):
     list_display = ('text', 'date', 'animation',
                     'question', 'number',
                     'truth', 'explanation')
-    list_filter = ('text','date', 'number', 'truth')
+    list_filter = ('text','date', 'number', 'truth', 'question')
 
 class AnimationAdmin(admin.ModelAdmin):
     list_display = ('image', 'id',)
